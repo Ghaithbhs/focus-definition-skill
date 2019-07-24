@@ -8,20 +8,20 @@ class FocusDefinition(MycroftSkill):
         MycroftSkill.__init__(self)
 
     @intent_handler(IntentBuilder("").require('definition.focus'))
-    def handle_hr_location(self):
+    def handle_focus_def(self):
         self.speak_dialog('definition.focus')
 
     @intent_handler(IntentBuilder("").require('focus.departments'))
-    def handle_hr_location(self):
+    def handle_focus_dep(self):
         self.speak_dialog('definition.departments')
 
     @intent_handler(IntentBuilder("").require('focus.field'))
-    def handle_hr_location(self):
+    def handle_focus_fields(self):
         self.speak_dialog('definition.field')
 
-        @intent_handler(IntentBuilder("").require('focus.history'))
-        def handle_hr_location(self):
-            self.speak_dialog('definition.history')
+    @intent_handler(IntentBuilder("").require('focus.history'))
+    def handle_focus_history(self):
+        self.speak_dialog('definition.history')
 
 
 def create_skill():
